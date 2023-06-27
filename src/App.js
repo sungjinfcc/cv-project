@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./App.css";
 import uniqid from "uniqid";
 import GeneralInfo from "./components/GeneralInfo";
 import GenInfoEdit from "./components/GenInfoEdit";
@@ -6,50 +7,39 @@ import EduInfo from "./components/EduInfo";
 import EduEdit from "./components/EduEdit";
 import ExpInfo from "./components/ExpInfo";
 import ExpEdit from "./components/ExpEdit";
+import Footer from "./Footer";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      onEditGen: true,
+      onEditGen: false,
       onEditEdu: "",
       onEditExp: "",
       genInfo: {
-        name: "abc",
-        email: "aaa@bbb.com",
-        phoneNumber: "12341234",
+        name: "Peatr Cap",
+        email: "react@master.com",
+        phoneNumber: "+1 123 4567",
+        detail:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan. Convallis posuere morbi leo urna. Blandit massa enim nec dui nunc mattis enim ut tellus. Magna etiam tempor orci eu. Quisque sagittis purus sit amet volutpat consequat mauris nunc congue. Malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi.",
       },
       eduInfos: [
         {
-          school: "Yonsei",
+          school: "React University",
           title: "Bachelor",
           dateFrom: "2013-03-01",
-          dateTo: "2020-02-28",
-          id: uniqid(),
-        },
-        {
-          school: "Korea",
-          title: "Bachelor",
-          dateFrom: "2013-03-01",
-          dateTo: "2020-02-28",
+          dateTo: "2017-02-28",
           id: uniqid(),
         },
       ],
       expInfos: [
         {
-          company: "Good Bank",
-          position: "Salad bar master",
-          mainTask: "make salad",
-          dateFrom: "2018-05-03",
-          dateTo: "2019-04-07",
-          id: uniqid(),
-        },
-        {
-          company: "Super fit",
-          position: "Salad bar master",
-          mainTask: "make salad",
-          dateFrom: "2018-05-03",
-          dateTo: "2019-04-07",
+          company: "React Company",
+          position: "React master",
+          mainTask:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan. Convallis posuere morbi leo urna. Blandit massa enim nec dui nunc mattis enim ut tellus. Magna etiam tempor orci eu. Quisque sagittis purus sit amet volutpat consequat mauris nunc congue. Malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi.",
+          dateFrom: "2023-06-27",
+          dateTo: "2023-06-28",
           id: uniqid(),
         },
       ],
@@ -98,13 +88,13 @@ class App extends Component {
 
   toggleEdu(e) {
     this.setState({
-      onEditEdu: e.target.parentNode.id,
+      onEditEdu: e.target.parentNode.parentNode.id,
     });
   }
 
   toggleExp(e) {
     this.setState({
-      onEditExp: e.target.parentNode.id,
+      onEditExp: e.target.parentNode.parentNode.id,
     });
   }
 
@@ -189,16 +179,19 @@ class App extends Component {
     });
     return (
       <div className="App">
-        <h1>CV</h1>
-        {genDiv}
-        {eduDivs}
-        <button onClick={this.addEdu} type="button">
-          Add education
-        </button>
-        {expDivs}
-        <button onClick={this.addExp} type="button">
-          Add experience
-        </button>
+        <div className="content">
+          <h1>CV</h1>
+          {genDiv}
+          {eduDivs}
+          <button onClick={this.addEdu} type="button" className="add">
+            + Add education
+          </button>
+          {expDivs}
+          <button onClick={this.addExp} type="button" className="add">
+            + Add experience
+          </button>
+        </div>
+        <Footer />
       </div>
     );
   }

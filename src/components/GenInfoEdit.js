@@ -2,7 +2,7 @@ import React from "react";
 
 function GenInfoEdit({ genInfo, toggle, change }) {
   return (
-    <div>
+    <div className="gen-info">
       <form>
         <input
           id="name"
@@ -25,7 +25,15 @@ function GenInfoEdit({ genInfo, toggle, change }) {
           placeholder="Phone Number"
           onChange={(e) => change(e, "genInfo")}
         />
-        <button type="button" onClick={toggle}>
+        <textarea
+          id="detail"
+          type="text"
+          value={genInfo.detail}
+          rows={5}
+          placeholder="Detail"
+          onChange={(e) => change(e, "genInfo")}
+        />
+        <button type="button" onClick={toggle} className="save">
           Save
         </button>
       </form>

@@ -2,7 +2,7 @@ import React from "react";
 
 function EduEdit({ eduInfo, toggle, change }) {
   return (
-    <div>
+    <div className="edu-info">
       <form>
         <input
           id="school"
@@ -30,7 +30,7 @@ function EduEdit({ eduInfo, toggle, change }) {
           value={eduInfo.dateTo}
           onChange={(e) => change(e, "eduInfos", eduInfo.id)}
         />
-        <button type="button" onClick={toggle}>
+        <button type="button" onClick={toggle} className="save">
           Save
         </button>
       </form>

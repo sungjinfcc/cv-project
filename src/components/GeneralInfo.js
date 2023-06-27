@@ -2,11 +2,12 @@ import React from "react";
 
 function GeneralInfo({ genInfo, toggle }) {
   return (
-    <div>
-      <div>{genInfo.name}</div>
-      <div>{genInfo.email}</div>
-      <div>{genInfo.phoneNumber}</div>
-      <button type="button" onClick={toggle}>
+    <div className="gen-info">
+      <div className="txt size-1">{genInfo.name}</div>
+      <div className="txt size-2">{genInfo.email}</div>
+      <div className="txt size-3">{genInfo.phoneNumber}</div>
+      <div className="txt size-4">{genInfo.detail}</div>
+      <button className="edit" type="button" onClick={toggle}>
         Edit
       </button>
     </div>

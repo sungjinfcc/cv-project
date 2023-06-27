@@ -1,0 +1,111 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+}
+body {
+  background-color: #e5e3e1;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  font-size: 5rem;
+  margin: 2rem auto;
+}
+
+.gen-info,
+.edu-info,
+.exp-info {
+  display: flex;
+  flex-direction: column;
+  width: 45vw;
+  background-color: #f2f1f0;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f1f0;
+}
+.txt {
+  margin-bottom: 1rem;
+}
+.size-1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.size-2 {
+  font-size: 1.5rem;
+}
+.size-3 {
+  font-size: 1rem;
+}
+.size-4 {
+  font-size: 1.2rem;
+}
+input {
+  border-radius: 5px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+textarea {
+  border-radius: 5px;
+  border: 2px solid black;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.buttons {
+  align-self: flex-end;
+}
+button {
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  padding: 1rem 1rem;
+  cursor: pointer;
+  align-self: flex-end;
+}
+.edit,
+.save {
+  color: blue;
+}
+.delete {
+  color: red;
+}
+.add {
+  font-size: 1rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+.content {
+  flex-grow: 1;
+}
+.footer {
+  display: flex;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+.fa-github {
+  color: black;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+.fa-github:hover {
+  transform: rotate(360deg) scale(1.2);
+}
